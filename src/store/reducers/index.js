@@ -6,8 +6,6 @@ const initialState = {
 };
 
 export default function TrackerReducer(state = initialState, { type, payload }) {
-    console.log(state);
-
     switch (type) {
         case ActionTypes.ADD_NEW_TRACKER:
             const addTrackers = [...state.trackers, payload];

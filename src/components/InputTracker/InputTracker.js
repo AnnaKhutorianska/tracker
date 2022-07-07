@@ -14,11 +14,7 @@ function InputTracker() {
 			width: '100%',
 			border: '1px solid #000',
 			borderRadius: '25px',
-			"&::placeholder": {
-				textOverflow: "ellipsis !important",
-				color: "blue",
-				fontSize: 14
-			  }
+			marginBottom: '20px'
 		},
 		buttonWrapper: {
 			padding : 0 
@@ -26,6 +22,9 @@ function InputTracker() {
 		buttonIcon: {
 			fontSize: '50px',
 			color: '#3faf6c',
+			'@media screen and (max-width: 560px)': {
+                fontSize: '30px'
+            },
 		}
 	};
 
@@ -45,6 +44,17 @@ function InputTracker() {
 				value={inputValue}
 				placeholder='Enter tracker name'
 				onChange={(e) => handleChange(e)}
+				inputProps={{
+					sx: {
+					  "&::placeholder": {
+						fontSize: '18px',
+						paddingLeft: '10px',
+						'@media screen and (max-width: 560px)': {
+							fontSize: '14px'
+						},
+					  }
+					}
+				  }}
 				endAdornment={
 					<IconButton onClick={handleClick} sx={styles.buttonWrapper}>
 						<PlayCircleIcon sx={styles.buttonIcon} />
